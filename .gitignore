@@ -5,7 +5,11 @@ yarn-debug.log*
 yarn-error.log*
 
 # Build output
-dist/
+dist/**
+!dist/
+!dist/**/
+!dist/**/*.js
+!dist/**/*.d.ts
 build/
 
 # Coverage directory used by tools like istanbul

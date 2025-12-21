@@ -47,7 +47,7 @@ export class CodexMcpServer {
           throw new Error(`Unknown tool: ${name}`);
         }
 
-        const handler = toolHandlers[name];
+        const handler = (toolHandlers as Record<string, any>)[name];
         return await handler.execute(args);
       } catch (error) {
         return {
