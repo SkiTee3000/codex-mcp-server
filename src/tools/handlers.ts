@@ -18,7 +18,7 @@ export class CodexToolHandler {
       }: CodexToolArgs = CodexToolSchema.parse(args);
 
       // Build command arguments with fixed settings
-      const selectedModel = 'gpt-5.2-codex';
+      const selectedModel = 'gpt-5.1-codex';
       
       const cmdArgs = [
         '--enable', 'web_search_request',
