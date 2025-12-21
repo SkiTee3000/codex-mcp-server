@@ -64,7 +64,7 @@ export class CodexMcpServer {
   }
 
   private isValidToolName(name: string): name is ToolName {
-    return Object.values(TOOLS).includes(name as ToolName);
+    return name in toolHandlers;
   }
 
   async start(): Promise<void> {
