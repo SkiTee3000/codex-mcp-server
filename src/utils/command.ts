@@ -43,7 +43,7 @@ export async function executeCommand(
     }
     throw new CommandExecutionError(
       [file, ...args].join(' '),
-      'Command execution failed',
+      `Command execution failed: ${error && typeof error === 'object' && 'stderr' in error ? error.stderr : String(error)}`,
       error
     );
   }

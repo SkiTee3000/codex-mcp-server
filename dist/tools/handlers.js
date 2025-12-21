@@ -9,10 +9,10 @@ export class CodexToolHandler {
             // Build command arguments with fixed settings
             const selectedModel = 'gpt-5.2-codex';
             const cmdArgs = [
+                '--search',
                 'exec',
                 '--model', selectedModel,
                 '--sandbox', 'read-only',
-                '--search',
                 '--skip-git-repo-check'
             ];
             // Add reasoning effort via config if provided

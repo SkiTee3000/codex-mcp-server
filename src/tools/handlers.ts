@@ -21,10 +21,10 @@ export class CodexToolHandler {
       const selectedModel = 'gpt-5.2-codex';
       
       const cmdArgs = [
+        '--search',
         'exec',
         '--model', selectedModel,
         '--sandbox', 'read-only',
-        '--search',
         '--skip-git-repo-check'
       ];
 

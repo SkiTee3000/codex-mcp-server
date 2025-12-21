@@ -3,7 +3,7 @@ import chalk from 'chalk';
 import { CodexMcpServer } from './server.js';
 const SERVER_CONFIG = {
     name: 'codex-mcp-server',
-    version: '0.0.6',
+    version: '1.2.2',
 };
 async function main() {
     try {

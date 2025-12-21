@@ -31,7 +31,7 @@ export async function executeCommand(file, args = []) {
                 };
             }
         }
-        throw new CommandExecutionError([file, ...args].join(' '), 'Command execution failed', error);
+        throw new CommandExecutionError([file, ...args].join(' '), `Command execution failed: ${error && typeof error === 'object' && 'stderr' in error ? error.stderr : String(error)}`, error);
     }
 }
 //# sourceMappingURL=command.js.map
