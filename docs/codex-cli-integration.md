@@ -86,7 +86,10 @@ This MCP server is optimized for **codex CLI v0.75.0 or later** for full feature
 
 ### 6. Reasoning Effort Control
 - **CLI Flag**: `-c model_reasoning_effort="<level>"`
-- **Levels**: `minimal`, `low`, `medium`, `high`
+- **Levels**: 
+  - `minimal`, `low`: For simple tasks
+  - `medium`: **Recommended default** for standard web searches and general analysis
+  - `high`: For **extremely complex tasks** requiring deep code analysis or intensive web research
 - **MCP Parameter**: `reasoningEffort` parameter in codex tool
 - **Note**: The standalone `--reasoning-effort` flag was removed in v0.50.0, now uses quoted config values for consistency
 

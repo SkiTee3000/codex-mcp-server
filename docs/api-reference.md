@@ -17,7 +17,7 @@ Execute Codex CLI with advanced session management and model control.
 | `sessionId` | string | ❌ | - | Session ID for conversational context |
 | `resetSession` | boolean | ❌ | `false` | Reset session history before processing |
 | `model` | string | ❌ | `gpt-5.2-codex` | Model to use for processing |
-| `reasoningEffort` | enum | ❌ | - | Control reasoning depth |
+| `reasoningEffort` | enum | ❌ | - | Control reasoning depth (medium recommended) |
 
 #### Model Options
 - `gpt-5.2-codex` (default) - Latest specialized coding model optimized for agentic tasks
@@ -29,8 +29,8 @@ Execute Codex CLI with advanced session management and model control.
 
 #### Reasoning Effort Levels
 - `low` - Quick responses, minimal processing
-- `medium` - Balanced quality and speed
-- `high` - Thorough analysis and comprehensive responses
+- `medium` - Balanced quality and speed (recommended default for most tasks)
+- `high` - Thorough analysis, deep code/web research (use only for very complex tasks)
 
 #### Response Format
 ```typescript

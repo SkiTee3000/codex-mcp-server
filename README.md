@@ -131,7 +131,7 @@ Use codex with sessionId "my-session" and resetSession true to start fresh analy
 - `sessionId` (optional): Session ID for conversational context
 - `resetSession` (optional): Reset session history before processing
 - `model` (optional): Model to use (defaults to `gpt-5.2-codex`)
-- `reasoningEffort` (optional): Control reasoning depth ('minimal', 'low', 'medium', 'high')
+- `reasoningEffort` (optional): Control reasoning depth ('minimal', 'low', 'medium', 'high'). 'medium' is recommended for most tasks.
 - `sandbox` (optional): Sandbox policy ('read-only', 'workspace-write', 'danger-full-access')
 - `fullAuto` (optional): Enable full-auto mode for sandboxed automatic execution
 - `workingDirectory` (optional): Working directory for the agent
@@ -225,7 +225,7 @@ Ask codex to create a React component that handles file uploads
 - Default: `gpt-5.2-codex`
 - Override per request with `model` parameter
 - Supported: `gpt-5.2-codex`, `gpt-5.1-codex`, `gpt-5.1-codex-max`, `gpt-5-codex`, `gpt-4o`, `gpt-4`, `o3`, `o4-mini`
-- Reasoning effort: `minimal`, `low`, `medium`, `high`
+- Reasoning effort: `minimal`, `low`, `medium` (default recommendation), `high` (for complex analysis)
 
 ### Sandbox Mode (New in v0.75.0)
 - `read-only`: No writes allowed
