@@ -110,7 +110,7 @@ Use the codex tool to explain this function:
 
 **Advanced Usage:**
 ```
-# Model selection (defaults to gpt-5.2-codex)
+# Model selection (defaults to gpt-5.3-codex)
 Use codex with model "gpt-4" to analyze this complex algorithm
 
 # Reasoning effort control
@@ -130,7 +130,7 @@ Use codex with sessionId "my-session" and resetSession true to start fresh analy
 - `prompt` (required): Your coding question or request
 - `sessionId` (optional): Session ID for conversational context
 - `resetSession` (optional): Reset session history before processing
-- `model` (optional): Model to use (defaults to `gpt-5.2-codex`)
+- `model` (optional): Model to use (defaults to `gpt-5.3-codex`)
 - `reasoningEffort` (optional): Control reasoning depth ('minimal', 'low', 'medium', 'high'). 'medium' is recommended for most tasks.
 - `sandbox` (optional): Sandbox policy ('read-only', 'workspace-write', 'danger-full-access')
 - `fullAuto` (optional): Enable full-auto mode for sandboxed automatic execution
@@ -222,9 +222,9 @@ Ask codex to create a React component that handles file uploads
 - 58 tests covering functionality and edge cases
 
 ### Model Selection
-- Default: `gpt-5.2-codex`
+- Default: `gpt-5.3-codex`
 - Override per request with `model` parameter
-- Supported: `gpt-5.2-codex`, `gpt-5.1-codex`, `gpt-5.1-codex-max`, `gpt-5-codex`, `gpt-4o`, `gpt-4`, `o3`, `o4-mini`
+- Supported: `gpt-5.3-codex`, `gpt-5.2-codex`, `gpt-5.2-codex-max`, `gpt-5-codex`, `gpt-4o`, `gpt-4`, `o3`, `o4-mini`
 - Reasoning effort: `minimal`, `low`, `medium` (default recommendation), `high` (for complex analysis)
 
 ### Sandbox Mode (New in v0.75.0)

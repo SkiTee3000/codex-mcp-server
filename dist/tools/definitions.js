@@ -17,7 +17,7 @@ export const toolDefinitions = [
                 reasoningEffort: {
                     type: 'string',
                     enum: ['medium', 'high'],
-                    description: 'Control reasoning depth: medium or high for complex tasks.',
+                    description: "Control reasoning depth: 'medium' is the recommended default for regular web searches and general analysis. Use 'high' only for highly complex tasks requiring deep code analysis or intensive web research.",
                 },
             },
             required: ['prompt'],
