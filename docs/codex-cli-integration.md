@@ -10,7 +10,7 @@ This MCP server is optimized for **codex CLI v0.75.0 or later** for full feature
 
 **Version History:**
 - **v0.75.0**: Added `codex exec review` command, sandbox modes, full-auto mode
-- **v0.74.0**: Introduced `gpt-5.3-codex` model
+- **v0.74.0**: Introduced `gpt-5.4` model
 - **v0.50.0**: Introduced `--skip-git-repo-check` flag, removed `--reasoning-effort` flag
 - **v0.36.0-v0.49.x**: Not compatible with this MCP server version (use older MCP releases)
 
@@ -71,13 +71,10 @@ This MCP server is optimized for **codex CLI v0.75.0 or later** for full feature
 - **MCP Parameter**: `workingDirectory` parameter in both codex and review tools
 
 ### 5. Model Selection
-- **Default Model**: `gpt-5.3-codex` (optimal for agentic coding tasks)
+- **Default Model**: `gpt-5.4` (optimal for agentic coding tasks)
 - **CLI Flag**: `--model <model-name>`
 - **Supported Models**:
-  - `gpt-5.3-codex` (default, specialized for agentic coding)
-  - `gpt-5.2-codex` (previous coding model)
-  - `gpt-5.2-codex-max` (enhanced coding)
-  - `gpt-5-codex` (base GPT-5 coding)
+  - `gpt-5.4` (default)
   - `gpt-4o` (fast multimodal)
   - `gpt-4` (advanced reasoning)
   - `o3` (OpenAI reasoning model)
@@ -88,8 +85,8 @@ This MCP server is optimized for **codex CLI v0.75.0 or later** for full feature
 - **CLI Flag**: `-c model_reasoning_effort="<level>"`
 - **Levels**: 
   - `minimal`, `low`: For simple tasks
-  - `medium`: **Recommended default** for standard web searches and general analysis
-  - `high`: For **extremely complex tasks** requiring deep code analysis or intensive web research
+  - `medium`: **Preferred default** for standard web searches and general analysis; near-high quality at much better cost
+  - `high`: Only when the user explicitly insists on maximum depth for an **extremely complex task**
 - **MCP Parameter**: `reasoningEffort` parameter in codex tool
 - **Note**: The standalone `--reasoning-effort` flag was removed in v0.50.0, now uses quoted config values for consistency
 
@@ -239,7 +236,7 @@ if (conversationIdMatch) {
    ```bash
    # Edit ~/.codex/config.toml to set preferences
    # Example:
-   # model = "gpt-5.3-codex"
+   # model = "gpt-5.4"
    # model_reasoning_effort = "medium"
    ```
 
@@ -251,7 +248,7 @@ if (conversationIdMatch) {
 ## Performance Optimizations
 
 ### Smart Model Selection
-- **Default to gpt-5.3-codex**: Optimal for agentic coding without configuration
+- **Default to gpt-5.4**: Optimal for agentic coding without configuration
 - **Context-Aware Suggestions**: Better model recommendations based on task type
 - **Consistent Experience**: Same model across session interactions
 
@@ -281,14 +278,14 @@ if (conversationIdMatch) {
 
 ### For Developers
 - **Always specify model explicitly** when behavior consistency is critical
-- **Use appropriate reasoning effort** based on task complexity
+- **Prefer medium reasoning effort** unless the user explicitly insists on high
 - **Implement proper error handling** for CLI interactions
 - **Monitor session lifecycle** to prevent memory leaks
 
 ### For Users
 - **Start with default settings** for optimal experience
 - **Use sessions for complex tasks** requiring multiple interactions
-- **Choose reasoning effort wisely** to balance speed and quality
+- **Choose reasoning effort conservatively**: medium is usually the best price/performance point
 - **Keep CLI updated** for latest features and bug fixes
 
 ## Troubleshooting
@@ -299,7 +296,7 @@ if (conversationIdMatch) {
    - Verify: Check `CODEX_HOME/auth.json` exists
 
 2. **Model Not Available**
-   - Solution: Use default `gpt-5.3-codex` or try alternative models
+   - Solution: Use default `gpt-5.4` or try alternative models
    - Check: Codex CLI documentation for available models
 
 3. **Resume Functionality Not Working**

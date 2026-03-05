@@ -18,8 +18,12 @@ export class CodexToolHandler {
       }: CodexToolArgs = CodexToolSchema.parse(args);
 
       // Build command arguments with fixed settings
-      const selectedModel = 'gpt-5.3-codex';
-      
+      const selectedModel = 'gpt-5.4';
+      const promptWithGuidance = [
+        'Reasoning guidance: treat medium-level effort as the default because it is usually close to high in quality while being much more cost-efficient. Use high effort only if the user explicitly insists on it for a truly complex task.',
+        prompt,
+      ].join('\n\n');
+
       const cmdArgs = [
         '--enable', 'web_search_request',
         'exec',
@@ -39,7 +43,7 @@ export class CodexToolHandler {
       }
 
       // Add the prompt
-      cmdArgs.push(prompt);
+      cmdArgs.push(promptWithGuidance);
 
       const result = await executeCommand('codex', cmdArgs);
       // Codex CLI may output to stderr, so check both

@@ -16,21 +16,18 @@ Execute Codex CLI with advanced session management and model control.
 | `prompt` | string | ✅ | - | The coding task, question, or analysis request |
 | `sessionId` | string | ❌ | - | Session ID for conversational context |
 | `resetSession` | boolean | ❌ | `false` | Reset session history before processing |
-| `model` | string | ❌ | `gpt-5.3-codex` | Model to use for processing |
-| `reasoningEffort` | enum | ❌ | - | Control reasoning depth (medium recommended) |
+| `model` | string | ❌ | `gpt-5.4` | Model to use for processing |
+| `reasoningEffort` | enum | ❌ | - | Control reasoning depth (prefer medium; reserve high for explicit user insistence) |
 
 #### Model Options
-- `gpt-5.3-codex` (default) - Latest specialized coding model optimized for agentic tasks
-- `gpt-5.2-codex` - Previous coding model version
-- `gpt-5.2-codex-max` - Enhanced coding model for complex tasks
-- `gpt-5-codex` - Base GPT-5 coding model
+- `gpt-5.4` (default) - Recommended default model for agentic coding tasks
 - `gpt-4o` - Fast multimodal model
 - `gpt-4` - Advanced reasoning capabilities
 
 #### Reasoning Effort Levels
 - `low` - Quick responses, minimal processing
-- `medium` - Balanced quality and speed (recommended default for most tasks)
-- `high` - Thorough analysis, deep code/web research (use only for very complex tasks)
+- `medium` - Preferred default for most tasks; close to high in quality and much more cost-efficient
+- `high` - Reserve for very complex work only when the user explicitly insists on it
 
 #### Response Format
 ```typescript
@@ -232,7 +229,7 @@ interface ErrorResponse {
 - **Context Optimization**: Recent turns only (last 2) for fallback context
 
 ### Response Optimization
-- **Model Selection**: Default `gpt-5.3-codex` optimized for agentic coding
+- **Model Selection**: Default `gpt-5.4` optimized for agentic coding
 - **Reasoning Control**: Adjust effort based on task complexity
 - **Native Resume**: Preferred over manual context building
 
